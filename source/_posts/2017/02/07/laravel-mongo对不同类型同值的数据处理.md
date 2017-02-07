@@ -8,7 +8,7 @@ tags:
  - mongo
 ---
 
-开发的时候发现，laravel-mongo 在 ORM 的时候，如果用 save 更新一个值，类型不同但值相同，是不会写入 db 的...
+最近敲代码的时候发现，[laravel-mongo](https://github.com/jenssegers/laravel-mongodb) 在 ORM 的时候，如果用 save 更新一个值，类型不同但值相同，是不会写入 db 的...
 
 举个栗子:
 
