@@ -5,14 +5,12 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><%= config.title %></title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui-css@2.2.12/semantic.min.css" integrity="sha256-/Z28yXtfBv/6/alw+yZuODgTbKZm86IKbPE/5kjO/xY=" crossorigin="anonymous">
     <%- css('css/app') %>
 </head>
 <body>
 <div id="app">
-    <div class="ui top fixed menu blur">
-    </div>
-    <div class="ui top fixed borderless menu">
+    <div class="ui top fixed borderless menu inverted">
         <div class="item site-name-area">
             <a href="<%- url_for() %>" class="site-title"><%= config.title %></a>
             <% if (theme.subtitle){ %>
@@ -39,9 +37,9 @@
     </div>
 </div>
 </body>
-<script src="https://cdn.jsdelivr.net/momentjs/2.17.1/moment.min.js"></script>
-<script src="https://cdn.jsdelivr.net/vue/2.1.10/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.18.1/moment.js" integrity="sha256-GSRe5cHmmTD3DgBxRifzkNLaW1iwPTzt9kJ86rGa8tg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.4.4/dist/vue.min.js" integrity="sha256-Ab5a6BPGk8Sg3mpdlsHzH6khPkniIWsvEuz8Fv/s9X8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui-css@2.2.12/semantic.min.js" integrity="sha256-Bhi6GMQ/72uYZcJXCJ2LToOIcN3+Cx47AZnq/Bw1f7A=" crossorigin="anonymous"></script>
 <%- js('js/app') %>
 </html>

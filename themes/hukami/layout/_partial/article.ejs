@@ -1,51 +1,53 @@
 <articl class="article article-type-<%= post.layout %>">
-    <div class="article-meta">
-        <header class="article-header">
-            <% if (post.link){ %>
-            <h1>
-                <a href="<%- url_for(post.link) %>" target="_blank" itemprop="url"><%= post.title %></a>
-            </h1>
-            <% } else if (post.title){ %>
-            <% if (index){ %>
-            <h1>
-                <a href="<%- url_for(post.path) %>"><%= post.title %></a>
-            </h1>
-            <% } else { %>
-            <h1>
-                <%= post.title %>
-            </h1>
-            <% } %>
-            <% } %>
-        </header>
-        <div class="article-date rotate">
-            <i class="icon calendar"></i>
-            <time datetime="<%= date_xml(post.date) %>"><%= post.date.format('YYYY-MM-DD') %>
-                <small><%= post.date.format('HH:mm') %></small>
-            </time>
-        </div>
-        <% if (post.categories && post.categories.length){ %>
-        <div class="article-category rotate">
-            <i class="icon book"></i>
-            <%- list_categories(post.categories, {
-                show_count: false,
-                'class': 'article-category',
-                style: 'none',
-                separator: '►'
-            }) %>
-        </div>
+    <header class="article-header ui sticky">
+        <% if (post.link){ %>
+        <h1>
+            <a href="<%- url_for(post.link) %>" target="_blank" itemprop="url"><%= post.title %></a>
+        </h1>
+        <% } else if (post.title){ %>
+        <% if (index){ %>
+        <h1>
+            <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+        </h1>
+        <% } else { %>
+        <h1>
+            <%= post.title %>
+        </h1>
         <% } %>
-        <% if (post.tags && post.tags.length){ %>
-        <div class="article-tag rotate">
-            <i class="icon tags"></i>
-            <%- list_tags(post.tags, {
-                show_count: false,
-                style: 'none',
-                'class': 'article-tag'
-            }) %>
-        </div>
         <% } %>
-    </div>
+    </header>
     <div class="article-inner">
+        <div class="article-left-side">
+            <div class="article-meta ui sticky">
+                <div class="article-date rotate">
+                    <i class="icon calendar"></i>
+                    <time datetime="<%= date_xml(post.date) %>"><%= post.date.format('YYYY-MM-DD') %>
+                        <small><%= post.date.format('HH:mm') %></small>
+                    </time>
+                </div>
+                <% if (post.categories && post.categories.length){ %>
+                <div class="article-category rotate">
+                    <i class="icon book"></i>
+                    <%- list_categories(post.categories, {
+                        show_count: false,
+                        'class': 'article-category',
+                        style: 'none',
+                        separator: '►'
+                    }) %>
+                </div>
+                <% } %>
+                <% if (post.tags && post.tags.length){ %>
+                <div class="article-tag rotate">
+                    <i class="icon tags"></i>
+                    <%- list_tags(post.tags, {
+                        show_count: false,
+                        style: 'none',
+                        'class': 'article-tag'
+                    }) %>
+                </div>
+                <% } %>
+            </div>
+        </div>
         <% if (post.photos && post.photos.length){ %>
         <div class="article-gallery">
             <div class="article-gallery-photos">
@@ -73,7 +75,7 @@
         </div>
         <footer class="article-footer">
             <!--<a data-url="<%- post.permalink %>" data-id="<%= post._id %>"-->
-               <!--class="article-share-link"><%= __('share') %></a>-->
+            <!--class="article-share-link"><%= __('share') %></a>-->
             <% if (post.comments && config.disqus_shortname){ %>
             <a href="<%- post.permalink %>#disqus_thread" class="article-comment-link"><%= __('comment') %></a>
             <% } %>
