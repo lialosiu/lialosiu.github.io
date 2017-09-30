@@ -5,18 +5,51 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><%= config.title %></title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui-css@2.2.12/semantic.min.css" integrity="sha256-/Z28yXtfBv/6/alw+yZuODgTbKZm86IKbPE/5kjO/xY=" crossorigin="anonymous">
+    <%- open_graph({
+        twitter_id: config.twitter,
+        google_plus: config.google_plus,
+        fb_admins: config.fb_admins,
+        fb_app_id: config.fb_app_id
+    }) %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui-css@2.2.12/semantic.min.css"
+          integrity="sha256-/Z28yXtfBv/6/alw+yZuODgTbKZm86IKbPE/5kjO/xY=" crossorigin="anonymous">
     <%- css('css/app') %>
 </head>
 <body>
 <div id="app">
-    <div class="ui top fixed borderless menu inverted">
-        <div class="item site-name-area">
-            <a href="<%- url_for() %>" class="site-title"><%= config.title %></a>
-            <% if (theme.subtitle){ %>
-            <a href="<%- url_for() %>" class="site-subtitle"><%= theme.subtitle %></a>
+    <div class="ui top fixed borderless icon menu inverted">
+        <a class="item site-name-area" href="<%- url_for() %>">
+            <img class="site-master-avatar" src="<%- gravatar(config.master_email, 30) %>">
+            <div class="site-title"><%= config.title %></div>
+            <% if (config.subtitle){ %>
+            <div class="site-subtitle"><%= config.subtitle %></div>
             <% } %>
-        </div>
+        </a>
+        <% for (var i in site.data.top_menu) { %>
+        <a class="item" href="<%= site.data.top_menu[i].href %>">
+            <div class="site-title"><%= site.data.top_menu[i].title %></div>
+        </a>
+        <% } %>
+        <% if (config.github){ %>
+        <a class="item" href="https://github.com/<%= config.github %>" target="_blank">
+            <i class="github icon"></i>
+        </a>
+        <% } %>
+        <% if (config.steam){ %>
+        <a class="item" href="https://steamcommunity.com/id/<%= config.steam %>" target="_blank">
+            <i class="steam icon"></i>
+        </a>
+        <% } %>
+        <% if (config.google_plus){ %>
+        <a class="item" href="https://plus.google.com/u/0/+<%= config.google_plus %>" target="_blank">
+            <i class="google plus icon"></i>
+        </a>
+        <% } %>
+        <% if (config.twitter){ %>
+        <a class="item" href="https://twitter.com/<%= config.twitter %>" target="_blank">
+            <i class="twitter icon"></i>
+        </a>
+        <% } %>
         <div class="right menu">
             <a class="item clock" v-cloak>{{ nowDatetime }}</a>
         </div>
@@ -37,9 +70,13 @@
     </div>
 </div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/moment@2.18.1/moment.js" integrity="sha256-GSRe5cHmmTD3DgBxRifzkNLaW1iwPTzt9kJ86rGa8tg=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue@2.4.4/dist/vue.min.js" integrity="sha256-Ab5a6BPGk8Sg3mpdlsHzH6khPkniIWsvEuz8Fv/s9X8=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/semantic-ui-css@2.2.12/semantic.min.js" integrity="sha256-Bhi6GMQ/72uYZcJXCJ2LToOIcN3+Cx47AZnq/Bw1f7A=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.18.1/moment.js"
+        integrity="sha256-GSRe5cHmmTD3DgBxRifzkNLaW1iwPTzt9kJ86rGa8tg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.4.4/dist/vue.min.js"
+        integrity="sha256-Ab5a6BPGk8Sg3mpdlsHzH6khPkniIWsvEuz8Fv/s9X8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui-css@2.2.12/semantic.min.js"
+        integrity="sha256-Bhi6GMQ/72uYZcJXCJ2LToOIcN3+Cx47AZnq/Bw1f7A=" crossorigin="anonymous"></script>
 <%- js('js/app') %>
 </html>
