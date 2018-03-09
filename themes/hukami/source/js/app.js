@@ -13,13 +13,16 @@ let app = new Vue({
                     context: $(item).parents('.article'),
                     offset: 50,
                     bottomOffset: 50,
-                })
+                    onUnstick: () => {
+                        $(item).css('left', '');
+                    }
+                });
             }
             if ($(item).hasClass('article-meta')) {
                 $(item).sticky({
                     context: $(item).parents('.article'),
-                    offset: 170,
-                    bottomOffset: 160,
+                    offset: 130,
+                    bottomOffset: 0,
                 })
             }
         });
