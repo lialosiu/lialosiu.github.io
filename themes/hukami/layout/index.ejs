@@ -8,9 +8,21 @@
         <% page.posts.each(function(post){ %>
             <%- partial('_partial/article', {post: post, index: true}) %>
         <% }) %>
+
+        <% if (page.total > 1){ %>
+            <nav class="page-nav">
+                <%- paginator({
+                    prev_text: '<i class="angle left icon"></i>',
+                    next_text: '<i class="angle right icon"></i>',
+                    escape: false
+                }) %>
+            </nav>
+        <% } %>
+
     <% } else { %>
         <%- partial('_partial/article', {post: page, index: false}) %>
     <% } %>
+
 </div>
 <div class="right-side">
     <div class="right-side-assistance">

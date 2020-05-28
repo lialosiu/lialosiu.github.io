@@ -50,6 +50,45 @@
       margin: 0 10px;
     }
 
+    .page-nav {
+      overflow: hidden;
+      margin: 20px;
+      box-shadow: box-shadow;
+      display: inline-block;
+
+      > * {
+        display: inline-block;
+        padding: 10px 0;
+        width: 50px;
+        text-align: center;
+        background: #eee;
+        transition: background 0.3s;
+
+        &:hover {
+          background: #ffc6c6;
+        }
+
+        & ~ * {
+          border-left: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        &:first-child {
+          border-radius: 5px 0 0 5px;
+        }
+
+        &:last-child {
+          border-radius: 0 5px 5px 0;
+        }
+      }
+
+      .page-number {
+        &.current {
+          background: #475972;
+          color: #ccc;
+        }
+      }
+    }
+
   }
 
   .right-side {
