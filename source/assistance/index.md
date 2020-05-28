@@ -1,6 +1,6 @@
 ---
 title: 応援
-layout: page
+layout: assistance
 ---
 
 [![ルリのかさね ～いもうと物語り～](http://product.hobibox.net/ruri-imouto/images/special/pack01.jpg?20171030105102)](http://www.din.or.jp/~nekoneko/)
