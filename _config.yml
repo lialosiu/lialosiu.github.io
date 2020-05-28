@@ -3,14 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Miscellaneous
-google_analytics:
+google_analytics: UA-26091800-1
 favicon: /favicon.png
 github: lialosiu
 twitter: lialosiu
 steam: lialosiu
-google_plus: WakatatsuRyou
-fb_admins:
-fb_app_id:
 master_email: lialosiu@gmail.com
 
 # Site
