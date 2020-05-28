@@ -1,0 +1,34 @@
+<div class="site-header">
+    <div class="header-img" data-parallax="scroll" data-image-src="<%- url_for('assests/header.jpg') %>"></div>
+    <div class="overlay">
+        <% if (is_page() || is_post()) { %>
+            <h1 class="post-title">
+                <%= page.title %>
+            </h1>
+            <% if (page.subtitle) { %>
+                <div class="post-subtitle">
+                    <%= page.subtitle %>
+                </div>
+            <% } %>
+        <% } else if (is_archive()) { %>
+            <h1 class="post-title">
+                日期归档: <%= page.year ? `${page.year}年` : '' %> <%= page.month ? `${page.month}月` : '' %>
+            </h1>
+        <% } else if (is_tag()) { %>
+            <h1 class="post-title">
+                标签归档: <%= page.tag %>
+            </h1>
+        <% } else if (is_category()) { %>
+            <h1 class="post-title">
+                分类归档: <%= page.category %>
+            </h1>
+        <% } else { %>
+            <h1 class="post-title">
+                <%= config.title %>
+            </h1>
+            <div class="post-subtitle">
+                <%= config.subtitle %>
+            </div>
+        <% } %>
+    </div>
+</div>

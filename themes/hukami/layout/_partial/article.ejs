@@ -1,33 +1,32 @@
-<articl class="article article-type-<%= post.layout %>">
-    <header class="article-header ui sticky">
+<article class="article article-type-<%= post.layout %> <%= index ? 'article-index' : 'article-single' %> <%= is_page() ? 'page' : ''%>">
+    <header class="article-header">
         <% if (post.link){ %>
-        <h1>
-            <a href="<%- url_for(post.link) %>" target="_blank" itemprop="url"><%= post.title %></a>
-        </h1>
+            <h1 class="title">
+                <a href="<%- url_for(post.link) %>" target="_blank" itemprop="url"><%= post.title %></a>
+            </h1>
         <% } else if (post.title){ %>
-        <% if (index){ %>
-        <h1>
-            <a href="<%- url_for(post.path) %>"><%= post.title %></a>
-        </h1>
-        <% } else { %>
-        <h1>
-            <%= post.title %>
-        </h1>
-        <% } %>
+            <% if (index){ %>
+                <h1 class="title">
+                    <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+                </h1>
+            <% } else { %>
+                <h1 class="title">
+                    <%= post.title %>
+                </h1>
+            <% } %>
         <% } %>
     </header>
     <div class="article-inner">
-        <div class="article-left-side">
-            <div class="article-meta ui sticky">
-                <div class="article-date rotate">
-                    <i class="icon calendar"></i>
-                    <time datetime="<%= date_xml(post.date) %>"><%= post.date.format('YYYY-MM-DD') %>
-                        <small><%= post.date.format('HH:mm') %></small>
-                    </time>
-                </div>
-                <% if (post.categories && post.categories.length){ %>
-                <div class="article-category rotate">
-                    <i class="icon book"></i>
+        <div class="article-meta">
+            <div class="article-date">
+                <i class="icon calendar" title="发布时间"></i>
+                <time datetime="<%= date_xml(post.date) %>"><%= post.date.format('YYYY-MM-DD') %>
+                    <small><%= post.date.format('HH:mm') %></small>
+                </time>
+            </div>
+            <% if (post.categories && post.categories.length){ %>
+                <div class="article-category">
+                    <i class="icon book" title="文章分类"></i>
                     <%- list_categories(post.categories, {
                         show_count: false,
                         'class': 'article-category',
@@ -35,62 +34,32 @@
                         separator: '►'
                     }) %>
                 </div>
-                <% } %>
-                <% if (post.tags && post.tags.length){ %>
-                <div class="article-tag rotate">
-                    <i class="icon tags"></i>
+            <% } %>
+            <% if (post.tags && post.tags.length){ %>
+                <div class="article-tag">
+                    <i class="icon tags" title="文章标签"></i>
                     <%- list_tags(post.tags, {
                         show_count: false,
                         style: 'none',
-                        'class': 'article-tag'
+                        'class': 'article-tag',
+                        separator: ', '
                     }) %>
                 </div>
-                <% } %>
-            </div>
+            <% } %>
         </div>
-        <% if (post.photos && post.photos.length){ %>
-        <div class="article-gallery">
-            <div class="article-gallery-photos">
-                <% post.photos.forEach(function(photo, i){ %>
-                <a class="article-gallery-img fancybox" href="<%- url_for(photo) %>" rel="gallery_<%= post._id %>">
-                    <img src="<%- url_for(photo) %>" itemprop="image">
-                </a>
-                <% }) %>
-            </div>
-        </div>
-        <% } %>
-        <% if (post.link || post.title){ %>
-        <% } %>
         <div class="article-entry">
             <% if (post.excerpt && index){ %>
-            <%- post.excerpt %>
-            <% if (theme.excerpt_link){ %>
-            <p class="article-more-link">
-                <a href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
-            </p>
-            <% } %>
+                <%- post.excerpt %>
+                <% if (theme.excerpt_link){ %>
+                    <p class="article-more-link">
+                        <a href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
+                    </p>
+                <% } %>
             <% } else { %>
-            <%- post.content %>
+                <%- post.content %>
             <% } %>
         </div>
-        <footer class="article-footer">
-            <!--<a data-url="<%- post.permalink %>" data-id="<%= post._id %>"-->
-            <!--class="article-share-link"><%= __('share') %></a>-->
-            <% if (post.comments && config.disqus_shortname){ %>
-            <a href="<%- post.permalink %>#disqus_thread" class="article-comment-link"><%= __('comment') %></a>
-            <% } %>
-        </footer>
     </div>
-    <% if (!index && false){ %>
-    <%- partial('post/nav') %>
-    <% } %>
-</articl>
-
-<% if (!index && post.comments && config.disqus_shortname){ %>
-<section id="comments">
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by
-                Disqus.</a></noscript>
-    </div>
-</section>
-<% } %>
+    <footer class="article-footer">
+    </footer>
+</article>

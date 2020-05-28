@@ -4,11 +4,7 @@
     </div>
 </div>
 <div class="main-side">
-    <% if (page && page.posts && page.posts.length > 0) { %>
-        <% page.posts.each(function(post){ %>
-            <%- partial('_partial/article', {post: post, index: true}) %>
-        <% }) %>
-    <% } else { %>
+    <% if (page) { %>
         <%- partial('_partial/article', {post: page, index: false}) %>
     <% } %>
 </div>

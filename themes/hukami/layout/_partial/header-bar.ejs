@@ -1,0 +1,31 @@
+<div class="header-bar" :class="{'at-top': isWindowScrollTop}">
+    <a class="site-name-block" href="<%- url_for() %>">
+        <img class="site-master-avatar" src="<%- gravatar(config.master_email, 32) %>" alt="avatar">
+        <div class="site-title"><%= config.title %></div>
+    </a>
+
+    <div class="flex"></div>
+
+    <div class="site-links">
+        <% if (config.github){ %>
+            <a class="site-link" href="https://github.com/<%= config.github %>" target="_blank">
+                <i class="github icon"></i>
+                <div class="text">Github</div>
+            </a>
+        <% } %>
+
+        <% if (config.steam){ %>
+            <a class="site-link" href="https://steamcommunity.com/id/<%= config.steam %>" target="_blank">
+                <i class="steam icon"></i>
+                <div class="text">Steam</div>
+            </a>
+        <% } %>
+
+        <% if (config.twitter){ %>
+            <a class="site-link" href="https://twitter.com/<%= config.twitter %>" target="_blank">
+                <i class="twitter icon"></i>
+                <div class="text">Twitter</div>
+            </a>
+        <% } %>
+    </div>
+</div>

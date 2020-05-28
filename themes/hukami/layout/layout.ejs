@@ -1,96 +1,23 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><%= config.title %></title>
-    <%- open_graph({
-        twitter_id: config.twitter,
-        google_plus: config.google_plus,
-        fb_admins: config.fb_admins,
-        fb_app_id: config.fb_app_id
-    }) %>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui-css@2.3.0/semantic.min.css"
-          integrity="sha256-/mC8AIsSmTcTtaf8vgnfbZXZLYhJCd0b9If/M0Y5nDw=" crossorigin="anonymous">
-    <%- css('css/app') %>
-</head>
+<html lang="zh-Hans">
+
+<%- partial('_partial/html-head') %>
+
 <body>
 <div id="app">
-    <div class="ui top fixed borderless icon menu inverted">
-        <a class="item site-name-area" href="<%- url_for() %>">
-            <img class="site-master-avatar" src="<%- gravatar(config.master_email, 30) %>">
-            <div class="site-title"><%= config.title %></div>
-            <% if (config.subtitle){ %>
-            <div class="site-subtitle"><%= config.subtitle %></div>
-            <% } %>
-        </a>
-        <% for (var i in site.data.top_menu) { %>
-        <a class="item site-top-link" href="<%= site.data.top_menu[i].href %>">
-            <% if (site.data.top_menu[i].icon) { %>
-            <i class="<%= site.data.top_menu[i].icon %> icon"></i>
-            <% } %>
-            <div class="text"><%= site.data.top_menu[i].title %></div>
-        </a>
-        <% } %>
-        <% if (config.github){ %>
-        <a class="item site-top-link" href="https://github.com/<%= config.github %>" target="_blank">
-            <i class="github icon"></i>
-            <div class="text">Github</div>
-        </a>
-        <% } %>
-        <% if (config.steam){ %>
-        <a class="item site-top-link" href="https://steamcommunity.com/id/<%= config.steam %>" target="_blank">
-            <i class="steam icon"></i>
-            <div class="text">Steam</div>
-        </a>
-        <% } %>
-        <% if (config.google_plus){ %>
-        <a class="item site-top-link" href="https://plus.google.com/u/0/+<%= config.google_plus %>" target="_blank">
-            <i class="google plus icon"></i>
-            <div class="text">Google+</div>
-        </a>
-        <% } %>
-        <% if (config.twitter){ %>
-        <a class="item site-top-link" href="https://twitter.com/<%= config.twitter %>" target="_blank">
-            <i class="twitter icon"></i>
-            <div class="text">Twitter</div>
-        </a>
-        <% } %>
-        <div class="right menu">
-            <a class="item clock" v-cloak>{{ nowDatetime }}</a>
-        </div>
+    <%- partial('_partial/header-bar') %>
+
+    <%- partial('_partial/site-header') %>
+
+    <div class="site-body">
+        <%- body %>
     </div>
-    <div class="body">
-        <div class="left-side">
-        </div>
-        <div class="main-side">
-            <%- body %>
-        </div>
-        <div class="right-side">
-            <div class="right-side-assistance">
-                <% if (site && site.data && site.data['right-side-assistance']) { %>
-                <% for (var key in site.data['right-side-assistance']) { %>
-                <% if (!site.data['right-side-assistance'].hasOwnProperty(key)) continue %>
-                <% var item = site.data['right-side-assistance'][key] %>
-                <a href="<%= item.href %>"><img src="<%= item.image %>" alt="<%= item.alt %>"></a>
-                <% } %>
-                <% } %>
-            </div>
-        </div>
-    </div>
-    <div class="site-footer">
-        Copyright &copy; 2015-<%- new Date().getFullYear() %> Lialosiu All Rights Reserved. Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-    </div>
+
+    <%- partial('_partial/site-footer') %>
+
 </div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"
-        integrity="sha256-1Q2q5hg2YXp9fYlM++sIEXOcUb8BRSDUsQ1zXvLBqmA=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/moment@2.21.0/moment.js"
-        integrity="sha256-9wM2SPsbZp8aQ0KHzSeg+KsAYGtc7GRTombqhhXvLSg=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/semantic-ui-css@2.3.0/semantic.min.js"
-        integrity="sha256-FMQoXFhCWeNb139Wa9Z2I0UjqDeKKDYY+6PLkWv4qco=" crossorigin="anonymous"></script>
+<%- partial('_partial/html-script') %>
 <%- js('js/app') %>
+
 </html>
