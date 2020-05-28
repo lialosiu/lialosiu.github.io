@@ -182,19 +182,6 @@ h5 {
   align-items: flex-start;
   margin-right: 100px;
 }
-.site-body .left-side .left-side-twitter .twitter-loading {
-  min-width: 220px;
-  min-height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 3px;
-  background: #4a637d;
-  overflow: hidden;
-  box-shadow: 0px 0px 5px rgba(0,0,0,0.7);
-  animation: iframe-blink 1s infinite ease-in-out;
-  color: #ccc;
-}
 @media screen and (max-width: 1599px) {
   .site-body .left-side .left-side-twitter {
     display: none;
@@ -214,6 +201,36 @@ h5 {
     flex: 1;
     margin: 0 10px;
   }
+}
+.site-body .main-side .page-nav {
+  overflow: hidden;
+  margin: 20px;
+  box-shadow: 1px 1px 4px 0 rgba(0,0,0,0.3);
+  display: inline-block;
+}
+.site-body .main-side .page-nav > * {
+  display: inline-block;
+  padding: 10px 0;
+  width: 50px;
+  text-align: center;
+  background: #eee;
+  transition: background 0.3s;
+}
+.site-body .main-side .page-nav > *:hover {
+  background: #ffc6c6;
+}
+.site-body .main-side .page-nav > * ~ * {
+  border-left: 1px solid rgba(0,0,0,0.2);
+}
+.site-body .main-side .page-nav > *:first-child {
+  border-radius: 5px 0 0 5px;
+}
+.site-body .main-side .page-nav > *:last-child {
+  border-radius: 0 5px 5px 0;
+}
+.site-body .main-side .page-nav .page-number.current {
+  background: #475972;
+  color: #ccc;
 }
 .site-body .right-side {
   background: transparent;
