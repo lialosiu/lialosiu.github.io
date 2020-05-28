@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lialosiu&#39;s Note</title>
     <meta name="description" content="又踩了了一个坑 之前曾经出现过 laravel 在极高的瞬间并发的时候，会出现session状态丢失的问题。原因是laravel中，session默认储存在文件系统，在瞬间并发时，可能由于文件系统io的原因，导致session文件读写失败，进而造成session丢失。 这个问题我当时是直接把session存放在cookie或者数据库中解决了。 然而今天又出现了新状况，也是瞬间高并发的锅。   如图">
 <meta property="og:type" content="article">
@@ -77,7 +77,7 @@
     <div class="site-body">
         <div class="left-side">
     <div class="left-side-twitter">
-        <a class="twitter-timeline" data-lang="zh-cn" data-theme="dark" href="https://twitter.com/lialosiu?ref_src=twsrc%5Etfw" target="_blank" rel="noopener">Twitter Loading..</a>
+        <a class="twitter-timeline" data-lang="zh-cn" data-height="3000" data-theme="dark" href="https://twitter.com/lialosiu?ref_src=twsrc%5Etfw" target="_blank" rel="noopener">Twitter Loading..</a>
     </div>
 </div>
 <div class="main-side">

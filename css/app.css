@@ -40,7 +40,7 @@
 body {
   margin: 0;
   padding: 0;
-  min-width: 600px;
+  min-width: 400px;
   overflow-x: auto;
   font-family: 'Microsoft YaHei', 'Meiryo', Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
   font-size: 14px;
@@ -61,7 +61,7 @@ h5 {
 }
 .header-bar {
   height: 50px;
-  min-width: 600px;
+  min-width: 400px;
   background-color: #393d47;
   position: fixed;
   top: 0;
@@ -108,7 +108,7 @@ h5 {
 .header-bar .site-links {
   display: flex;
   align-items: stretch;
-  margin-right: 20px;
+  margin-right: 10px;
   font-family: 'miso-light', Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
   text-shadow: 0 0 3px #000;
 }
@@ -116,7 +116,7 @@ h5 {
   display: flex;
   align-items: center;
   color: #fff;
-  margin: 0 20px;
+  margin: 0 10px;
   transition: border 0.3s;
   border-top: 0 solid #fffd8e;
 }

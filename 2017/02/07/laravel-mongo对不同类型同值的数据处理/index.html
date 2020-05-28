@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lialosiu&#39;s Note</title>
     <meta name="description" content="最近敲代码的时候发现，laravel-mongo 在 ORM 的时候，如果用 save 更新一个值，类型不同但值相同，是不会写入 db 的… 举个栗子: 1234$data &#x3D; new Data();$data-&gt;_id &#x3D; 1;$data-&gt;a &#x3D; 123;$data-&gt;save();  那么mongo里面就是  a: int32 &#x3D; 123 这时候如果再 123$data &#x3D;">
 <meta property="og:type" content="article">
@@ -76,7 +76,7 @@
     <div class="site-body">
         <div class="left-side">
     <div class="left-side-twitter">
-        <a class="twitter-timeline" data-lang="zh-cn" data-theme="dark" href="https://twitter.com/lialosiu?ref_src=twsrc%5Etfw" target="_blank" rel="noopener">Twitter Loading..</a>
+        <a class="twitter-timeline" data-lang="zh-cn" data-height="3000" data-theme="dark" href="https://twitter.com/lialosiu?ref_src=twsrc%5Etfw" target="_blank" rel="noopener">Twitter Loading..</a>
     </div>
 </div>
 <div class="main-side">
