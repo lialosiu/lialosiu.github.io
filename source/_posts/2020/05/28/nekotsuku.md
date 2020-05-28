@@ -1,6 +1,6 @@
 ---
 title: 歌词听写 - 『Get the Freedom』
-subtitle: 『ねこツク、さくら。』のオープニングムービー
+subtitle: 『ねこツク、さくら。』 オープニングムービー
 date: 2020-05-28 12:52:25
 category:
  - 日常
