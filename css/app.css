@@ -182,6 +182,9 @@ h5 {
   align-items: flex-start;
   margin-right: 100px;
 }
+.site-body .left-side .left-side-twitter .twitter-timeline {
+  max-width: 300px !important;
+}
 @media screen and (max-width: 1599px) {
   .site-body .left-side .left-side-twitter {
     display: none;
