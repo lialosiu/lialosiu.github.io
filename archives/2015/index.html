@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lialosiu&#39;s Note</title>
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Lialosiu&#39;s Note">
+<meta property="og:url" content="http://lialosiu.com/archives/2015/index.html">
+<meta property="og:site_name" content="Lialosiu&#39;s Note">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Lialosiu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@lialosiu">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui-css@2.4.1/semantic.min.css"
+          integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q=" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="/css/app.css">
+
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26091800-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-26091800-1');
+    </script>
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+<div id="app">
+    <div class="header-bar" :class="{'at-top': isWindowScrollTop}">
+    <a class="site-name-block" href="/">
+        <img class="site-master-avatar" src="https://www.gravatar.com/avatar/d3f817314d352b397f3a2c816ebc73bd?s=32" alt="avatar">
+        <div class="site-title">Lialosiu&#39;s Note</div>
+    </a>
+
+    <div class="flex"></div>
+
+    <div class="site-links">
+        
+            <a class="site-link" href="https://github.com/lialosiu" target="_blank">
+                <i class="github icon"></i>
+                <div class="text">Github</div>
+            </a>
+        
+
+        
+            <a class="site-link" href="https://steamcommunity.com/id/lialosiu" target="_blank">
+                <i class="steam icon"></i>
+                <div class="text">Steam</div>
+            </a>
+        
+
+        
+            <a class="site-link" href="https://twitter.com/lialosiu" target="_blank">
+                <i class="twitter icon"></i>
+                <div class="text">Twitter</div>
+            </a>
+        
+    </div>
+</div>
+
+    <div class="site-header">
+    <div class="header-img" data-parallax="scroll" data-image-src="/assests/header.jpg"></div>
+    <div class="overlay">
+        
+            <h1 class="post-title">
+                日期归档: 2015年 
+            </h1>
+        
+    </div>
+</div>
+
+    <div class="site-body">
+        <div class="left-side">
+    <div class="left-side-twitter">
+        <a class="twitter-timeline" data-lang="zh-cn" data-height="3000" data-theme="dark" target="_blank" rel="noopener" href="https://twitter.com/lialosiu?ref_src=twsrc%5Etfw">
+    <div class="twitter-loading"></div>
+</a>
+    </div>
+</div>
+<div class="main-side">
+    
+        
+            <article class="article article-type-post article-index ">
+    <header class="article-header">
+        
+            
+                <h1 class="title">
+                    <a href="/2015/08/28/%E4%BF%AE%E5%A4%8Dwindows10%E4%B8%AD%E6%8D%9F%E5%9D%8F%E7%9A%84appx%E5%BA%94%E7%94%A8/">修复 Windows 10 中损坏的 Appx 应用</a>
+                </h1>
+            
+        
+    </header>
+    <div class="article-inner">
+        <div class="article-meta">
+            <div class="article-date">
+                <i class="icon calendar" title="发布时间"></i>
+                <time datetime="2015-08-28T08:14:43.000Z">2015-08-28
+                    <small>16:14</small>
+                </time>
+            </div>
+            
+                <div class="article-category">
+                    <i class="icon book" title="文章分类"></i>
+                    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91/">开发</a>
+                </div>
+            
+            
+                <div class="article-tag">
+                    <i class="icon tags" title="文章标签"></i>
+                    <a class="article-tag-none-link" href="/tags/win10/" rel="tag">win10</a>
+                </div>
+            
+        </div>
+        <div class="article-entry">
+            
+                <p>前段时间手贱把 Surface Pro 3 的 系统升级到了 Windows Indsider Fast Ring 通道的 10525 版本，然后发现 <a target="_blank" rel="noopener" href="https://www.google.com/intl/zh-CN/chrome/browser/desktop/index.html">Chrome</a> 和 <a href="virtualbox.org">Virtual Box</a> 都出现了兼容性问题，估计是新的内存管理机制的锅。</p>
+<p>因为工作需要用到 Vagrant，<a target="_blank" rel="noopener" href="http://virtualbox.org/">Virtual Box</a> 不能用简直不能忍，于是我滚回到了10240</p>
+<p>然而没想到回滚完成后，好几个 Appx 应用都出问题了，应用名显示为 <code>@&#123;microsoft.windowscommunicationsapps_17.6120.42011.0_x64__8wekyb3d8bbwe&#125;</code> 类似这样的形式。</p>
+<img src="/2015/08/28/%E4%BF%AE%E5%A4%8Dwindows10%E4%B8%AD%E6%8D%9F%E5%9D%8F%E7%9A%84appx%E5%BA%94%E7%94%A8/000.jpg" class="">
+
+<p>出问题的应用分别为 Edge、日历与邮件、应用商店、Cortana，其中 Edge 和 Cortana 只是名字没了Icon没了，商店则是变成了英文菜单，日历与邮件则是直接打开不能、更新不能、卸载不能、完全拿他没办法。</p>
+<p>强行忍了一个多星期，实在受不了，于是昨天抽时间出来终于把这问题解决了，写下来记录下步骤 <del>顺便给blog填点东西</del></p>
+<hr>
+<p>首先，祭出最基本的 <code>wsreset</code> 大法，管理员运行，然而并没有什么卵用</p>
+<p>试着跑了下系统自带的<code>疑难解答</code>，然而它提示说……</p>
+<img src="/2015/08/28/%E4%BF%AE%E5%A4%8Dwindows10%E4%B8%AD%E6%8D%9F%E5%9D%8F%E7%9A%84appx%E5%BA%94%E7%94%A8/001.jpg" class="">
+
+<p>|дﾟ)</p>
+<p>好咯，还是要自己动手</p>
+<p>既然系统搞不定，那就自己来研究吧</p>
+<p>管理员身份打开 <code>Powershell</code>，把所有包重新注册一遍</p>
+<figure class="highlight ps"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-AppXPackage</span> | <span class="keyword">Foreach</span> &#123;<span class="built_in">Add-AppxPackage</span> <span class="literal">-DisableDevelopmentMode</span> <span class="literal">-Register</span> <span class="string">&quot;<span class="variable">$</span>(<span class="variable">$_</span>.InstallLocation)\AppXManifest.xml&quot;</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>坐等了大概一分钟，跑完了</p>
+<p>跑完瞬间发现，Edge恢复正常了，那写坏掉的应用名也恢复正常了！</p>
+<p>然而还是有两个坏掉的图标……</p>
+<img src="/2015/08/28/%E4%BF%AE%E5%A4%8Dwindows10%E4%B8%AD%E6%8D%9F%E5%9D%8F%E7%9A%84appx%E5%BA%94%E7%94%A8/002.jpg" class="">
+
+<p>日历与邮件还是不行_(:3」∠)_</p>
+<p>瞄了一眼 Powershell，发现有报错</p>
+<img src="/2015/08/28/%E4%BF%AE%E5%A4%8Dwindows10%E4%B8%AD%E6%8D%9F%E5%9D%8F%E7%9A%84appx%E5%BA%94%E7%94%A8/003.jpg" class="">
+
+<p>咦，<code>C:\</code> 在C盘根目录找是什么鬼</p>
+<p>输出一下包信息看一下先：</p>
+<figure class="highlight ps"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-AppxPackage</span> microsoft.windowscommunicationsapps*</span><br></pre></td></tr></table></figure>
+
+<img src="/2015/08/28/%E4%BF%AE%E5%A4%8Dwindows10%E4%B8%AD%E6%8D%9F%E5%9D%8F%E7%9A%84appx%E5%BA%94%E7%94%A8/004.jpg" class="">
+
+<p>妈了个鸡，为何 InstallLocation 不见了……</p>
+<figure class="highlight ps"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="string">&quot;C:\Program Files\WindowsApps\&quot;</span></span><br><span class="line"><span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
+
+<img src="/2015/08/28/%E4%BF%AE%E5%A4%8Dwindows10%E4%B8%AD%E6%8D%9F%E5%9D%8F%E7%9A%84appx%E5%BA%94%E7%94%A8/005.jpg" class="">
+
+<p>妈了个蛋，还真没了这个文件夹……</p>
+<p>存在的文件是 <code>42011</code> 然而包信息里面的是 <code>42001</code></p>
+<p>好吧，估计这个就是问题所在了……</p>
+<p>试试移除掉这个包咯</p>
+<figure class="highlight ps"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-AppxPackage</span> *microsoft.windowscommunicationsapps* | <span class="built_in">Remove-AppxPackage</span></span><br></pre></td></tr></table></figure>
+
+<p>然而并没有用，还是读的根目录</p>
+<p>想了想，既然只会读根目录，那我就把 42011 的 AppXManifest.xml 扔在 C: 根目录总能读到了吧？</p>
+<p>于是把整个 42011 的所有文件复制一份扔在根目录</p>
+<p>然后试着：</p>
+<figure class="highlight ps"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Add-AppxPackage</span> <span class="literal">-register</span> <span class="string">&quot;C:\AppxManifest.xml&quot;</span> –DisableDevelopmentMode</span><br></pre></td></tr></table></figure>
+
+<p>有反应！但是依然是报错信息，说在 <code>C:\ProgramData\Microsoft\Windows\AppRepository</code> 里面找不到对应的xml</p>
+<p>那我就复制一份进去咯</p>
+<figure class="highlight ps"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xcopy <span class="string">&#x27;C:\AppxManifest.xml&#x27;</span> microsoft.windowscommunicationsapps_17.<span class="number">6106.42001</span>.<span class="number">0</span>_x64__8wekyb3d8bbwe.xml</span><br></pre></td></tr></table></figure>
+
+<p>再试试看！</p>
+<figure class="highlight ps"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Add-AppxPackage</span> <span class="literal">-register</span> <span class="string">&quot;C:\AppxManifest.xml&quot;</span> –DisableDevelopmentMode</span><br></pre></td></tr></table></figure>
+
+<p>nice！成功运行！</p>
+<p>打开开始菜单看看，邮件恢复了！</p>
+<p>为了防止出现各种奇怪的问题，先把包砍了再从商店装一遍吧</p>
+<p>然而并不能在GUI下直接卸载，那就老方法</p>
+<figure class="highlight ps"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-AppxPackage</span> *microsoft.windowscommunicationsapps* | <span class="built_in">Remove-AppxPackage</span></span><br></pre></td></tr></table></figure>
+
+<p>ok，卸掉</p>
+<p>然后商店重新安装</p>
+<img src="/2015/08/28/%E4%BF%AE%E5%A4%8Dwindows10%E4%B8%AD%E6%8D%9F%E5%9D%8F%E7%9A%84appx%E5%BA%94%E7%94%A8/006.jpg" class="">
+
+<p>搞定 (´・ω・&#96;)</p>
+
+            
+        </div>
+    </div>
+    <footer class="article-footer">
+    </footer>
+</article>
+
+        
+            <article class="article article-type-post article-index ">
+    <header class="article-header">
+        
+            
+                <h1 class="title">
+                    <a href="/2015/02/17/homestead2.0.9%E7%9A%84%E4%B8%80%E4%B8%AA%E5%9D%91/">Homestead 2.0.9 的一个坑</a>
+                </h1>
+            
+        
+    </header>
+    <div class="article-inner">
+        <div class="article-meta">
+            <div class="article-date">
+                <i class="icon calendar" title="发布时间"></i>
+                <time datetime="2015-02-17T01:55:00.000Z">2015-02-17
+                    <small>09:55</small>
+                </time>
+            </div>
+            
+                <div class="article-category">
+                    <i class="icon book" title="文章分类"></i>
+                    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91/">开发</a>
+                </div>
+            
+            
+        </div>
+        <div class="article-entry">
+            
+                <p>整个下午都在调戏 <a target="_blank" rel="noopener" href="http://laravel.com/docs/5.0">Laravel 5</a> 和 <a target="_blank" rel="noopener" href="http://laravel.com/docs/5.0/homestead">Homestead</a>，然后掉坑里了……记录一下</p>
+<p>Homestead.yaml 配置文件中，folders列，如果要设置为当前路径，不能够这样：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">folders:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">map:</span> <span class="string">.</span></span><br><span class="line">      <span class="attr">to:</span> <span class="string">/home/vagrant/your-dir</span></span><br></pre></td></tr></table></figure>
+
+<p>而是要这样：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">folders:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">map:</span> <span class="string">./</span></span><br><span class="line">      <span class="attr">to:</span> <span class="string">/home/vagrant/your-dir</span></span><br></pre></td></tr></table></figure>
+
+<p>就因为这尼玛的少了个斜杠 <code>/</code>， <code>/vagrant</code> 一直mount不了……</p>
+
+            
+        </div>
+    </div>
+    <footer class="article-footer">
+    </footer>
+</article>
+
+        
+
+        
+
+    
+
+</div>
+<div class="right-side">
+    <div class="right-side-assistance">
+        
+            
+                
+                
+                <a target="_blank" rel="noopener" href="http://www.favo-soft.jp"><img src="http://www.favo-soft.jp/soft/product/sakura/banner/banner_l_kuro.jpg" alt="さくら、もゆ。-as the Night&#39;s, Reincarnation- 応援中！！"></a>
+            
+                
+                
+                <a target="_blank" rel="noopener" href="http://www.favo-soft.jp"><img src="http://www.favo-soft.jp/soft/product/sakura/banner/banner_l_haru.jpg" alt="さくら、もゆ。-as the Night&#39;s, Reincarnation- 応援中！！"></a>
+            
+                
+                
+                <a target="_blank" rel="noopener" href="http://www.eukleia.co.jp/eushully/"><img src="http://www.eukleia.co.jp/eushully/eu19/banner/banner_eu19lb.jpg" alt="「封緘のグラセスタ」応援中！"></a>
+            
+                
+                
+                <a target="_blank" rel="noopener" href="https://www.lumpofsugar.co.jp/product/yorikure/"><img src="https://www.lumpofsugar.co.jp/product/yorikure/campaign/images/bn/150_650a.jpg" alt="『縁りて此の葉は紅に』2018年1月26日発売予定！"></a>
+            
+                
+                
+                <a target="_blank" rel="noopener" href="https://www.lumpofsugar.co.jp/product/yorikure/"><img src="https://www.lumpofsugar.co.jp/product/yorikure/campaign/images/bn/150_650c.jpg" alt="『縁りて此の葉は紅に』2018年1月26日発売予定！"></a>
+            
+        
+    </div>
+</div>
+    </div>
+
+    <div class="site-footer">
+    Copyright &copy; 2015-2023 Lialosiu All Rights Reserved. Powered by <a
+            href="https://hexo.io/" target="_blank">Hexo</a>. Hosted on <a href="https://pages.github.com/"
+                                                                           target="_blank">GitHub Pages</a>.
+</div>
+
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"
+        integrity="sha256-1Q2q5hg2YXp9fYlM++sIEXOcUb8BRSDUsQ1zXvLBqmA=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-parallax.js@1.5.0/parallax.min.js"
+        integrity="sha256-cNb9ArVGKhXkedowZK9xRxCpr6qqck5JvCAsuMzJlPw=" crossorigin="anonymous"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<script src="/js/app.js"></script>
+
+
+</html>
